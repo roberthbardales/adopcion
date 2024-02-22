@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+
+            </div>
+        </div>
+        <div class="row">
+            <table class="table">
+                    {{form.as_table}}
+                    <!-- {{form.as_p}} -->
+            </table>
+        </div>
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="" class="btn btn-danger">Cancelar</a>
+        </div>
+    </div>
+</form>
+
+
+{% endblock content %}
+
+
+
+
+

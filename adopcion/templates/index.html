@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="">
+            <h1 class="text-center">Mascotas</h1>
+        </div>
+    <div class="d-flex justify-content-center align-items-center table-container">
+    <table class="table table-bordered table-striped  align-middle w-50 text-center">
+        <thead class="">
+            <tr>
+                <td>nombre</td>
+                <td>raza</td>
+                <td>edad</td>
+                <td>descripcion</td>
+                <td>Imagen</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in mascotas %}
+            <tr>
+                <td>{{a.nombre}}</td>
+                <td>{{a.raza}}</td>
+                <td>{{a.edad}}</td>
+                <td>{{a.descripcion}}</td>
+                <td><img src="{{a.foto.url}}" width="100px"></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+</div>
+</div>
+
+    {% endblock content %}
