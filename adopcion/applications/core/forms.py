@@ -8,8 +8,7 @@ class MascotaForm(forms.ModelForm):
         fields=[
             'nombre',
             'edad',
-            # 'raza',
             'foto',
             'descripcion',
-            'propietario',
+            'adoptada',
         ]

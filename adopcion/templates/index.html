@@ -15,20 +15,33 @@
         <thead class="">
             <tr>
                 <td>nombre</td>
-                <td>raza</td>
                 <td>edad</td>
                 <td>descripcion</td>
                 <td>Imagen</td>
+                <td>Adoptada</td>
+                <td>Accion</td>
             </tr>
         </thead>
         <tbody>
             {% for a in mascotas %}
             <tr>
                 <td>{{a.nombre}}</td>
-                <td>{{a.raza}}</td>
                 <td>{{a.edad}}</td>
                 <td>{{a.descripcion}}</td>
                 <td><img src="{{a.foto.url}}" width="100px"></td>
+
+                <td>
+                    <ul>
+                        <li>
+
+                            {% if a.adoptada %}
+                            <h5 class="card-title">{{a.adoptada}}</h5>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </td>
+
+                <td><a href="{% url 'core_app:mascota' a.id %}" class="btn btn-success">Adoptar</a></td>
             </tr>
             {% endfor %}
         </tbody>

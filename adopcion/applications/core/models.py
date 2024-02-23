@@ -8,6 +8,7 @@ class Propietario(models.Model):
     nombre = models.CharField(max_length=50)
     telefono = models.CharField(max_length=50)
     correo = models.CharField(max_length=50)
+    mascota = models.ManyToManyField("Mascota",blank=True,related_name="clientes")
 
     class Meta:
         verbose_name = 'Propietario'
@@ -18,11 +19,10 @@ class Propietario(models.Model):
 
 class Mascota(models.Model):
     nombre = models.CharField(max_length=50)
-    edad = models.CharField(default=0,max_length=50)
-    raza = models.CharField(null=True,blank=True,max_length=50)
-    foto = models.ImageField(upload_to='mascotas', null=True,blank=True)
+    edad = models.CharField(max_length=3, default=0,)
+    foto = models.ImageField(upload_to='mascotas',null=True,blank=True)
     descripcion = models.TextField()
-    propietario=models.ManyToManyField(Propietario)
+    adoptada = models.CharField(max_length=50,null=True,blank=True)
     class Meta:
         verbose_name = 'Mascota'
         verbose_name_plural = 'Mascotas'
